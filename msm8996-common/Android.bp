@@ -47,64 +47,6 @@ android_app_import {
 	privileged: true,
 }
 
-android_app_import {
-	name: "vzw_msdc_api",
-	owner: "lge",
-	apk: "proprietary/app/vzw_msdc_api/vzw_msdc_api.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-}
-
-android_app_import {
-	name: "VZWAPNService",
-	owner: "lge",
-	apk: "proprietary/priv-app/VZWAPNService/VZWAPNService.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "VZWAVS",
-	owner: "lge",
-	apk: "proprietary/priv-app/VZWAVS/VZWAVS.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "VzwLcSilent",
-	owner: "lge",
-	apk: "proprietary/priv-app/VzwLcSilent/VzwLcSilent.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "VzwOmaTrigger",
-	owner: "lge",
-	apk: "proprietary/priv-app/VzwOmaTrigger/VzwOmaTrigger.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-dex_import {
-	name: "VerizonUnifiedSettings",
-	owner: "lge",
-	jars: ["proprietary/framework/VerizonUnifiedSettings.jar"],
 }
 
 cc_prebuilt_library_shared {
@@ -170,26 +112,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libdsi_netctrl",
-	owner: "lge",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libdsi_netctrl.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libdsi_netctrl.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libgpustats",
 	owner: "lge",
 	strip: {
@@ -210,60 +132,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libqmi_cci",
+	name: "libloc_api_v02",
 	owner: "lge",
 	strip: {
 		none: true,
 	},
 	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqmi_cci.so"],
-		},
 		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqmi_cci.so"],
+			srcs: ["proprietary/vendor/lib64/libloc_api_v02.so"],
 		},
 	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libqmi_common_so",
-	owner: "lge",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqmi_common_so.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqmi_common_so.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libqmiservices",
-	owner: "lge",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqmiservices.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqmiservices.so"],
-		},
-	},
-	compile_multilib: "both",
+	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
@@ -286,6 +165,28 @@ cc_prebuilt_library_shared {
 	compile_multilib: "both",
 	check_elf_files: false,
 	prefer: true,
+	soc_specific: true,
+}
+
+android_app_import {
+	name: "CneApp",
+	owner: "lge",
+	apk: "proprietary/vendor/app/CneApp/CneApp.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	soc_specific: true,
+}
+
+android_app_import {
+	name: "IWlanService",
+	owner: "lge",
+	apk: "proprietary/vendor/app/IWlanService/IWlanService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
 	soc_specific: true,
 }
 
@@ -338,49 +239,57 @@ prebuilt_etc_xml {
 android_app_import {
 	name: "QtiTelephonyService",
 	owner: "lge",
-	apk: "proprietary/app/QtiTelephonyService/QtiTelephonyService.apk",
+	apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
+	system_ext_specific: true,
 }
 
 android_app_import {
-	name: "CNEService",
+	name: "uceShimService",
 	owner: "lge",
-	apk: "proprietary/priv-app/CNEService/CNEService.apk",
+	apk: "proprietary/system_ext/app/uceShimService/uceShimService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	system_ext_specific: true,
+}
+
+android_app_import {
+	name: "ims",
+	owner: "lge",
+	apk: "proprietary/system_ext/priv-app/ims/ims.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
 	privileged: true,
+	system_ext_specific: true,
+}
+
+android_app_import {
+	name: "dpmserviceapp",
+	owner: "lge",
+	apk: "proprietary/system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	system_ext_specific: true,
 }
 
 android_app_import {
 	name: "qcrilmsgtunnel",
 	owner: "lge",
-	apk: "proprietary/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk",
+	apk: "proprietary/system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
 	privileged: true,
-}
-
-dex_import {
-	name: "QtiTelephonyServicelibrary",
-	owner: "lge",
-	jars: ["proprietary/framework/QtiTelephonyServicelibrary.jar"],
-}
-
-dex_import {
-	name: "qcrilhook",
-	owner: "lge",
-	jars: ["proprietary/framework/qcrilhook.jar"],
-}
-
-dex_import {
-	name: "qti-telephony-common",
-	owner: "lge",
-	jars: ["proprietary/framework/qti-telephony-common.jar"],
+	system_ext_specific: true,
 }
