@@ -326,20 +326,12 @@ cc_prebuilt_library_shared {
 	soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-	name: "libloc_api_v02",
+prebuilt_etc_xml {
+	name: "vendor.qti.gnss@3.0-service",
 	owner: "lge",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libloc_api_v02.so"],
-		},
-	},
-	compile_multilib: "64",
-	check_elf_files: false,
-	prefer: true,
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
 	soc_specific: true,
 }
 
