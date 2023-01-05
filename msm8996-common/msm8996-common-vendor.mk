@@ -572,6 +572,15 @@ PRODUCT_COPY_FILES += \
     vendor/lge/msm8996-common/proprietary/vendor/lib64/vendor.qti.latency@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.latency@2.0.so \
     vendor/lge/msm8996-common/proprietary/vendor/lib64/vendor.qti.voiceprint@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.voiceprint@1.0.so \
     vendor/lge/msm8996-common/proprietary/vendor/radio/qcril_database/qcril.db:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/qcril.db
+    
+#SoundTrigger
+PRODUCT_COPY_FILES += \
+    vendor/lge/msm8996-common/proprietary/vendor/lib/hw/sound_trigger.primary.msm8996.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/sound_trigger.primary.msm8996.so \
+
+#HotwordEnrollment
+PRODUCT_PACKAGES += \
+    HotwordEnrollmentOKGoogleWCD9335 \
+    HotwordEnrollmentXGoogleWCD9335
 
 PRODUCT_PACKAGES += \
     gatekeeper.msm8996 \
@@ -592,4 +601,3 @@ PRODUCT_PACKAGES += \
     QtiTelephonyServicelibrary \
     qcrilhook \
     qti-telephony-common
-    
