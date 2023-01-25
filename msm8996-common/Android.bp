@@ -47,8 +47,6 @@ android_app_import {
 	privileged: true,
 }
 
-}
-
 cc_prebuilt_library_shared {
 	name: "gatekeeper.msm8996",
 	owner: "lge",
