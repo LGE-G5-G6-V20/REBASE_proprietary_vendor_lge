@@ -339,6 +339,7 @@ PRODUCT_COPY_FILES += \
     
 # Camera // mmcamera
 PRODUCT_COPY_FILES += \
+    vendor/lge/v20-common/proprietary/vendor/lib/camera/mmcamera/libmmcamera_interface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_interface.so \
     vendor/lge/v20-common/proprietary/vendor/lib/camera/mmcamera/libmmcamera_brcb032gwz_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_brcb032gwz_eeprom.so \
     vendor/lge/v20-common/proprietary/vendor/lib/camera/mmcamera/libmmcamera_brcb032gwz_s5k2p7_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_brcb032gwz_s5k2p7_eeprom.so \
     vendor/lge/v20-common/proprietary/vendor/lib/camera/mmcamera/libmmcamera_chromaflash_lib.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_chromaflash_lib.so \
